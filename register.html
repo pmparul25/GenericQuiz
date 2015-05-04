@@ -49,7 +49,7 @@
     <main>
         <div class="row register_form">
             <div class="col m4 s2 card-panel"></div>
-            <form class="col m4 s8 card-panel teal">
+            <form class="col m4 s8 card-panel teal" action="registeration.html" method="get">
                 <div class="row">
                     <div class="col m10 s10 white-text"><h4>Registration</h4></div>
                     <div class="col m1 s1"></div>
@@ -59,7 +59,7 @@
                     <div class="input-field col m1 s1"></div>
                     <div class="input-field col m10 s10 white-text">
                         <i class="mdi-action-account-circle prefix white-text"></i>
-                        <input id="full_name" type="text" class="validate">
+                        <input id="full_name" type="text" class="validate" name="fullName">
                         <label for="full_name" class="white-text">Full Name</label>
                     </div>
                     <div class="input-field col m1 s1"></div>
@@ -68,7 +68,7 @@
                     <div class="input-field col m1 s1"></div>
                     <div class="input-field col m10 s10 white-text">
                         <i class="mdi-communication-email prefix white-text"></i>
-                        <input id="email_id" type="tel" class="validate">
+                        <input id="email_id" type="text" class="validate" name="email">
                         <label for="email_id" class="white-text">Email id</label>
                     </div>
                     <div class="input-field col m1 s1"></div>
@@ -77,7 +77,7 @@
                     <div class="input-field col m1 s1"></div>
                     <div class="input-field col m10 s10 white-text">
                         <i class="mdi-action-account-balance prefix white-text"></i>
-                        <input id="university" type="tel" class="validate">
+                        <input id="university" type="text" class="validate" name="university">
                         <label for="university" class="white-text">University</label>
                     </div>
                     <div class="input-field col m1 s1"></div>
@@ -86,10 +86,16 @@
                     <div class="input-field col m1 s1"></div>
                     <div class="input-field col m10 s10 white-text">
                         <i class="mdi-action-lock prefix white-text"></i>
-                        <input id="password" type="password" class="validate">
+                        <input id="password" type="password" class="validate" name="password">
                         <label for="password" class="white-text">Password</label>
                     </div>
                     <div class="input-field col m1 s1"></div>
+                </div>
+                <div class="row">
+                    <div class="col m12 s12" align="center"> <button class="btn waves-effect waves-light pink" type="submit">Register
+                        <i class="mdi-content-send right"></i>
+                    </button>
+                    </div>
                 </div>
             </form>
             <div class="col m4 s2 card-panel"></div>
