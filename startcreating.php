@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 include 'config.php';
 session_start();
 $_SESSION['qname']=$_POST['q_name'];
@@ -14,15 +18,54 @@ $q_no=$count+1;
 mkdir("uploads/$qname");
 $sql = mysql_query("CREATE TABLE $qname(
 q_no INT(6) PRIMARY KEY AUTO_INCREMENT, 
+<<<<<<< HEAD
+=======
+=======
+$qname=$_POST['q_name'];
+$oname=$_POST['o_name'];
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "GenericQuiz";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+// sql to create table
+$sql = "CREATE TABLE $qname (
+q_no INT(6) PRIMARY KEY, 
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 question VARCHAR(250) NOT NULL,
 option1 VARCHAR(50),
 option2 VARCHAR(50),
 option3 VARCHAR(50),
 option4 VARCHAR(50),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 answer VARCHAR(50) NOT NULL,
 img_url VARCHAR(100),
 organizer VARCHAR(50) NOT NULL
 )") or die("Table Already Exists, Contact Database Admin");
+<<<<<<< HEAD
+=======
+=======
+answer VARCHAR(50) NOT NULL
+)";
+if ($conn->query($sql) === TRUE) {
+    echo "";
+} else {
+    echo "Error creating table: " . $conn->error;
+}
+$conn->close();
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,7 +78,15 @@ organizer VARCHAR(50) NOT NULL
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
 	<link id="page_favicon" href="favicon.ico" rel="icon" type="image/x-icon">
+<<<<<<< HEAD
     <title>Enter Quiz Questions</title>
+=======
+<<<<<<< HEAD
+    <title>Enter Quiz Questions</title>
+=======
+    <title>Create A Quiz</title>
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
     <style>
         .quiz_margin{
             margin: 35px 41px 7px 0px;
@@ -64,12 +115,30 @@ organizer VARCHAR(50) NOT NULL
             <a href="#!" class="brand-logo">Create A Quiz</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="index.php">Home</a></li>
                 <li><a href="register.html">Register</a></li>
 				<li><a href="about.html">About</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="index.php">Home</a></li>
+<<<<<<< HEAD
+=======
+=======
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#login" class="modal-trigger">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+				<li><a href="authtocreate.php">Create A Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="register.html">Register</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
@@ -80,17 +149,39 @@ organizer VARCHAR(50) NOT NULL
 	<form class="col s12" method="POST" action="pushentry.php">
 	<div class="row">
         <div class="input-field col s2">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
           <input disabled id="disabled" type="text" class="validate">
           <label><?php echo $_SESSION['qname'];?></label>
         </div>
       </div>
     <div class="row">
+<<<<<<< HEAD
+=======
+=======
+          <input disabled id="disabled" type="text" class="validate" name="qname">
+          <label><?php echo $qname;?></label>
+        </div>
+      </div>
+    <div class="row">
+        <div class="input-field col s1">
+          <input id="q_no" type="text" class="validate" name="q_no">
+          <label for="q_no">Q No</label>
+		</div>
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 	    <div class="input-field col s6">
           <input id="question" type="text" class="validate" name="question">
           <label for="question">Question</label>
         </div>
 	</div>
 	<div class="row">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 	    <div class="input-field col s6">
           <p>
       <input type="checkbox" id="chk1" name="image" value="image"/>
@@ -107,6 +198,11 @@ organizer VARCHAR(50) NOT NULL
 	</span>
 	<span class="mcq-txt hide">
 	<div class="row">
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
         <div class="input-field col s3">
           <input id="option1" type="text" class="validate" name="option1">
           <label for="optionq">Option1</label>
@@ -126,7 +222,14 @@ organizer VARCHAR(50) NOT NULL
           <label for="option4">Option4</label>
         </div>
 	</div>
+<<<<<<< HEAD
 	</span>
+=======
+<<<<<<< HEAD
+	</span>
+=======
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 	<div class="row">
         <div class="input-field col s4">
           <input id="answer" type="text" class="validate" name="answer">
@@ -145,6 +248,10 @@ organizer VARCHAR(50) NOT NULL
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">UPES-CSI Student Chapter</h5>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 					<p class="grey-text text-lighten-4">Address:<br> UPES-CSI Student Chapter<br> IT-Tower , CIT <br>University of Petroleum and Energy Studies <br>Energy Acres , P.O. Bidholi via Prem nagar , <br>Dehradun(248007) , Uttarakhand , India </p>
                 </div>
                 <div class="col l4 s12" style="overflow: hidden;">
@@ -154,6 +261,19 @@ organizer VARCHAR(50) NOT NULL
                             <li class="hide-on-small-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div></li>
                             <li class="hide-on-large-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div></li>
                         </ul>
+<<<<<<< HEAD
+=======
+=======
+                    <p class="grey-text text-lighten-4">Hello world the content goes in here in rows and columns</p>
+                </div>
+                <div class="col l4 s12" style="overflow: hidden;">
+                    <h5 class="white-text">Connect with us</h5>
+
+                    <a href="https://twitter.com/upescsi" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @upescsi</a>
+
+
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 </div>
             </div>
         </div>
@@ -165,6 +285,10 @@ organizer VARCHAR(50) NOT NULL
         </div>
     </footer>
     <!--end Footer-->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 
     <!-- Login Modal Structure -->
     <div id="login" class="modal">
@@ -227,6 +351,13 @@ $(':checkbox[name=image]').on('change', function() {
     }
 });
 </script>
+<<<<<<< HEAD
+=======
+=======
+</body>
+<!--Begin of Script Section-->
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
     <script>
 
         //responsive initialization

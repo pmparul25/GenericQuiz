@@ -1,11 +1,27 @@
 <?php
+<<<<<<< HEAD
 //Setting Up Quiz
 //Inputting Quiz Name and Organizer Name
+=======
+<<<<<<< HEAD
+//Setting Up Quiz
+//Inputting Quiz Name and Organizer Name
+=======
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 session_start();
 include 'config.php';
 $chk = mysql_query("Select permission from loginad WHERE email='".$_SESSION['email']."'");
 $chk1 = mysql_fetch_array($chk);
+<<<<<<< HEAD
 if($chk1['permission'] == 1)
+=======
+<<<<<<< HEAD
+if($chk1['permission'] == 1)
+=======
+if($chk1['permission']==1)
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 {
 ?>
 <!DOCTYPE html>
@@ -48,18 +64,43 @@ if($chk1['permission'] == 1)
             <a href="#!" class="brand-logo">Create A Quiz</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="index.php">Home</a></li>
                 <li><a href="register.html">Register</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li class="active"><a href="index.php">Home</a></li>
+<<<<<<< HEAD
+=======
+=======
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#login" class="modal-trigger">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+				<li><a href="authtocreate.php">Create A Quiz</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="register.html">Register</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
+<<<<<<< HEAD
 <marquee>Do not include space in Quiz Name. Suggestion: Use  -  or  _</marquee>
+=======
+<<<<<<< HEAD
+<marquee>Do not include space in Quiz Name. Suggestion: Use  -  or  _</marquee>
+=======
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
     <!--end Header-->
 <br><br>
 <!--Form To Generate a quiz-->
@@ -88,6 +129,10 @@ if($chk1['permission'] == 1)
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">UPES-CSI Student Chapter</h5>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 					<p class="grey-text text-lighten-4">Address:<br> UPES-CSI Student Chapter<br> IT-Tower , CIT <br>University of Petroleum and Energy Studies <br>Energy Acres , P.O. Bidholi via Prem nagar , <br>Dehradun(248007) , Uttarakhand , India </p>
                 </div>
                 <div class="col l4 s12" style="overflow: hidden;">
@@ -97,6 +142,19 @@ if($chk1['permission'] == 1)
                             <li class="hide-on-small-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div></li>
                             <li class="hide-on-large-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div></li>
                         </ul>
+<<<<<<< HEAD
+=======
+=======
+                    <p class="grey-text text-lighten-4">Hello world the content goes in here in rows and columns</p>
+                </div>
+                <div class="col l4 s12" style="overflow: hidden;">
+                    <h5 class="white-text">Connect with us</h5>
+
+                    <a href="https://twitter.com/upescsi" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @upescsi</a>
+
+
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 </div>
             </div>
         </div>
@@ -108,6 +166,10 @@ if($chk1['permission'] == 1)
         </div>
     </footer>
     <!--end Footer-->
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 
     <!-- Login Modal Structure -->
     <div id="login" class="modal">
@@ -154,6 +216,13 @@ if($chk1['permission'] == 1)
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
+<<<<<<< HEAD
+=======
+=======
+</body>
+<!--Begin of Script Section-->
+>>>>>>> origin/master
+>>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
     <script>
 
         //responsive initialization
