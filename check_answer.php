@@ -72,6 +72,21 @@ if($_SESSION['q_no']<$num_rows)
 			}
 		}
 	else
+		if(isset($_POST['group1']))
+		{
+			if($_POST['group1']==$ans['answer'])
+			{
+				$upd=mysql_query("UPDATE $quizname SET score=score+1 WHERE email='".$_SESSION['email']."'") or die("Score Not Updated");
+				$_SESSION['q_no']=$_SESSION['q_no']+1;
+				header('Location: quiz.php?Name='.$db);
+			}
+			else
+			{
+				$_SESSION['q_no']=$_SESSION['q_no']+1;
+				header('Location: quiz.php?Name='.$db);
+			}
+		}
+	else
 	{
 		$_SESSION['q_no']=$_SESSION['q_no']+1;
 		header('Location: quiz.php?Name='.$db);
@@ -122,6 +137,21 @@ else
 			}
 			else
 			{
+				header('Location: result.php?Name='.$db);
+			}
+		}
+	else
+		if(isset($_POST['group1']))
+		{
+			if($_POST['group1']==$ans['answer'])
+			{
+				$upd=mysql_query("UPDATE $quizname SET score=score+1 WHERE email='".$_SESSION['email']."'") or die("Score Not Updated");
+				$_SESSION['q_no']=$_SESSION['q_no']+1;
+				header('Location: result.php?Name='.$db);
+			}
+			else
+			{
+				$_SESSION['q_no']=$_SESSION['q_no']+1;
 				header('Location: result.php?Name='.$db);
 			}
 		}

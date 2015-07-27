@@ -46,6 +46,7 @@ $from_time = strtotime($_SESSION['quiz_end_time']);
 //Getting Time Difference
 $countdown = round(abs($to_time - $from_time) / 1,2);
 
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -118,18 +119,17 @@ else
     </nav>
     <!--end Header-->
     <!--Main Content-->
-    <main>
-	
+    <main>    
         <!--Make the timer-->
         <?php
 		if($res['quiz_time']!='')
 		{
 		?>
         <div class="timer_location">
-            <span><a class="btn-floating btn-large waves-effect waves-light red">00:00</a></span>
+            <span><a class="btn-floating btn-large waves-effect waves-light red"><span id="timer"></span></a></span>
         </div>
 		<?php
-		{
+		}
 		?>
 		<!--End of timer-->
 		
@@ -162,7 +162,32 @@ for($i=$j;$i<=$j;$i++)
                         <p><?php echo $row['question'];?></p>
                 </div>
 				<?php
-				if($row['option1']!='' && $row['option2']!='')
+				//Getting No of Answers
+				$comma = substr_count($row['answer'], ',');
+				if($row['option1']!='' && $row['option2']!='' && $comma==0)
+				{
+				?>
+				    <div class="col s1 m1"></div>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test1" value="<?php echo $row['option1'];?>" />
+					<label for="test1" class="white-text"><?php echo $row['option1'];?></label>
+				</p>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test2" value="<?php echo $row['option2'];?>" />
+					<label for="test2" class="white-text"><?php echo $row['option2'];?></label>
+				</p>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test3" value="<?php echo $row['option3'];?>" />
+					<label for="test3" class="white-text"><?php echo $row['option3'];?></label>
+				</p>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test4" value="<?php echo $row['option4'];?>" />
+					<label for="test4" class="white-text"><?php echo $row['option4'];?></label>
+				</p>
+				<?php
+				}
+				else
+				if($row['option1']!='' && $row['option2']!='' && $comma>0)
 				{
 				?>
                     <div class="col s1 m1"></div>
@@ -270,7 +295,7 @@ else
 <!--Begin of Script Section-->
 	<script>
 	//This Script Section Displays The Counter
-		var count = <?php echo $countdown;?>;
+		var count = '<?php echo $countdown;?>';
 		var qname = '<?php echo $qname?>';
 		var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
 

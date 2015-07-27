@@ -1,13 +1,6 @@
 <?php
 include 'config.php';
-<<<<<<< HEAD
 //Login Organizer In Order to to let them Create Quiz
-=======
-<<<<<<< HEAD
-//Login Organizer In Order to to let them Create Quiz
-=======
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 ?>
 <!DOCTYPE html>
 <html>
@@ -49,10 +42,6 @@ include 'config.php';
             <a href="#!" class="brand-logo">Create A Quiz</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="index.php">Home</a></li>
                 <li><a href="#login" class="modal-trigger">Login</a></li>
                 <li><a href="register.html">Register</a></li>
@@ -60,19 +49,6 @@ include 'config.php';
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li class="active"><a href="index.php">Home</a></li>
-<<<<<<< HEAD
-=======
-=======
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#login" class="modal-trigger">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-				<li><a href="authtocreate.php">Create A Quiz</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li class="active"><a href="index.html">Home</a></li>
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
                 <li><a href="about.html">About</a></li>
@@ -86,7 +62,7 @@ include 'config.php';
     <form class="col s12" method="POST" action="loginad.php">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Placeholder" id="uid" type="text" class="validate" name="UID">
+          <input id="uid" type="text" class="validate" name="UID">
           <label for="uid">Unique CSI ID</label>
         </div>
         <div class="input-field col s7">
@@ -94,7 +70,7 @@ include 'config.php';
           <label for="name">Name of Member</label>
         </div>
 		<div class="input-field col s8">
-          <input placeholder="Placeholder" id="email" type="text" class="validate" name="email">
+          <input id="email" type="text" class="validate" name="email">
           <label for="email">E-mail</label>
         </div>
 		<div class="input-field col s9">
@@ -114,10 +90,6 @@ include 'config.php';
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">UPES-CSI Student Chapter</h5>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 					<p class="grey-text text-lighten-4">Address:<br> UPES-CSI Student Chapter<br> IT-Tower , CIT <br>University of Petroleum and Energy Studies <br>Energy Acres , P.O. Bidholi via Prem nagar , <br>Dehradun(248007) , Uttarakhand , India </p>
                 </div>
                 <div class="col l4 s12" style="overflow: hidden;">
@@ -127,19 +99,6 @@ include 'config.php';
                             <li class="hide-on-small-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div></li>
                             <li class="hide-on-large-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div></li>
                         </ul>
-<<<<<<< HEAD
-=======
-=======
-                    <p class="grey-text text-lighten-4">Hello world the content goes in here in rows and columns</p>
-                </div>
-                <div class="col l4 s12" style="overflow: hidden;">
-                    <h5 class="white-text">Connect with us</h5>
-
-                    <a href="https://twitter.com/upescsi" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @upescsi</a>
-
-
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 </div>
             </div>
         </div>
@@ -151,10 +110,6 @@ include 'config.php';
         </div>
     </footer>
     <!--end Footer-->
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 
     <!-- Login Modal Structure -->
     <div id="login" class="modal">
@@ -201,13 +156,6 @@ include 'config.php';
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
-<<<<<<< HEAD
-=======
-=======
-</body>
-<!--Begin of Script Section-->
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
     <script>
 
         //responsive initialization

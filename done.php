@@ -130,7 +130,7 @@ $result = $display;
 <!--Question Update Row End-->
 
 <!--Upload The Quiz-->
-<marquee>Dear <?php echo $onamed.', '.$qnamed;?>is uploaded to Database make required changes and then drop a mail to Event Head to make it live!</marquee>
+<marquee>Dear <?php echo $onamed.', '.$qnamed;?> is uploaded to Database make required changes and then drop a mail to Event Head to make it live!</marquee>
   <div class="row"><a href="index.php">
 	<button class="btn waves-effect waves-light" type="submit" name="action">No Changes, UPLOAD
     <i class="mdi-content-send right"></i>

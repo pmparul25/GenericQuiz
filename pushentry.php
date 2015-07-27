@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 include 'config.php';
 session_start();
 $qname=$_SESSION['qname'];
@@ -67,22 +63,10 @@ if ($uploadOk == 0) {
 //If Question Contains Options Only
 if(isset($_POST['option1']) && isset($_POST['option2']) && empty($_FILES["fileToUpload"]["name"]))
 {
-<<<<<<< HEAD
-=======
-=======
-$qname=$_POST['qname'];
-$qno=$_POST['q_no'];
-$question=$_POST['question'];
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 $option1=$_POST['option1'];
 $option2=$_POST['option2'];
 $option3=$_POST['option3'];
 $option4=$_POST['option4'];
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 $push = mysql_query("Insert into $qname (question,option1,option2,option3,option4,answer,organizer) values ('$question','$option1','$option2','$option3','$option4','$answer','$organizer')");
 }
 //If Question contains Image and Options Both
@@ -116,13 +100,6 @@ else
 if($push)
 	{
 		echo "<script>alert('Entry Accepted');</script>";
-<<<<<<< HEAD
-=======
-=======
-$answer=$_POST['answer'];
-$push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option1.','.$option2.','.$option3.','.$option4.','.$answer.'");
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 ?>
 <!DOCTYPE html>
 <html>
@@ -134,10 +111,6 @@ $push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option
     <link href="css/materialize.min.css" rel="stylesheet">
     <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.min.js"></script>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<link id="page_favicon" href="favicon.ico" rel="icon" type="image/x-icon">
     <title>Enter Quiz Questions</title>
@@ -145,14 +118,6 @@ $push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option
 		.hide {
   display: none;
 }
-<<<<<<< HEAD
-=======
-=======
-	<link id="page_favicon" href="favicon.ico" rel="icon" type="image/x-icon">
-    <title>Create A Quiz</title>
-    <style>
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
         .quiz_margin{
             margin: 35px 41px 7px 0px;
         }
@@ -180,40 +145,18 @@ $push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option
             <a href="#!" class="brand-logo">Create A Quiz</a>
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down">
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="index.php">Home</a></li>
                 <li><a href="register.html">Register</a></li>
 				<li><a href="about.html">About</a></li>
             </ul>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="index.php">Home</a></li>
-<<<<<<< HEAD
-=======
-=======
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="#login" class="modal-trigger">Login</a></li>
-                <li><a href="register.html">Register</a></li>
-				<li><a href="authtocreate.php">Create A Quiz</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="login.html">Login</a></li>
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 <li><a href="register.html">Register</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </div>
     </nav>
     <!--end Header-->
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 <form class="col s12" method="POST" action="pushentry.php" enctype="multipart/form-data">
 	<div class="row">
         <div class="input-field col s2">
@@ -277,23 +220,12 @@ $push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option
 </form>
     <a href="done.php" class="btn waves-effect waves-light" id="finished">Finished
     <i class="mdi-content-send right"></i></a>
-<<<<<<< HEAD
-=======
-=======
-<br><br>
-
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 <!--Begin Footer-->
 <footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
                     <h5 class="white-text">UPES-CSI Student Chapter</h5>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 					<p class="grey-text text-lighten-4">Address:<br> UPES-CSI Student Chapter<br> IT-Tower , CIT <br>University of Petroleum and Energy Studies <br>Energy Acres , P.O. Bidholi via Prem nagar , <br>Dehradun(248007) , Uttarakhand , India </p>
                 </div>
                 <div class="col l4 s12" style="overflow: hidden;">
@@ -303,19 +235,6 @@ $push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option
                             <li class="hide-on-small-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div></li>
                             <li class="hide-on-large-only"><div class="fb-like" data-href="https://facebook.com/upescsi" data-layout="standard" data-action="like" data-show-faces="false" data-share="false"></div></li>
                         </ul>
-<<<<<<< HEAD
-=======
-=======
-                    <p class="grey-text text-lighten-4">Hello world the content goes in here in rows and columns</p>
-                </div>
-                <div class="col l4 s12" style="overflow: hidden;">
-                    <h5 class="white-text">Connect with us</h5>
-
-                    <a href="https://twitter.com/upescsi" class="twitter-follow-button" data-show-count="true" data-size="large">Follow @upescsi</a>
-
-
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
                 </div>
             </div>
         </div>
@@ -328,10 +247,6 @@ $push = mysql_query("Insert into $qname values ('.$qno.','.$question.','.$option
     </footer>
     <!--end Footer-->
 </body>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 <!--end of Body-->
 
 <!--Begin of Script Section-->
@@ -364,12 +279,6 @@ $(':checkbox[name=image]').on('change', function() {
     }
 });
 </script>
-<<<<<<< HEAD
-=======
-=======
-<!--Begin of Script Section-->
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
     <script>
 
         //responsive initialization
@@ -385,10 +294,6 @@ $(':checkbox[name=image]').on('change', function() {
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
             $('.modal-trigger').leanModal();
         });
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0
 		
     </script>
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
@@ -398,14 +303,4 @@ $(':checkbox[name=image]').on('change', function() {
 	}
 else
 	echo 'Entry Invalid';
-<<<<<<< HEAD
 ?>
-=======
-?>
-=======
-    </script>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-<!--End of Script Section-->
-</html>
->>>>>>> origin/master
->>>>>>> bfa3cfb0d8e98fca6183b53f2033fab038aed1c0

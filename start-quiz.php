@@ -218,7 +218,7 @@ else
 if($a>=4 || $b==2)
 {
 	$result = mysql_query("SELECT * FROM $quizname WHERE email='$email'"); //check if corresponding user had already attempted the quiz
-$num_rows = mysql_num_rows($result);
+	$num_rows = mysql_num_rows($result);
 if($num_rows==0)
 {
 if(isset($_SESSION['name']))
@@ -292,7 +292,7 @@ else
             <a href="#" class="brand-logo"><?php echo $qname;?></a>
 		</div>
     </nav>
-	<marquee>Do not REFRESH on this page.Quiz will be submitted automatically if you do so!</marquee>
+	<p align="center">Do not REFRESH on this page.Quiz will be submitted automatically if you do so!</p>
     <!--end Header-->
 
 
@@ -304,10 +304,10 @@ else
 		{
 		?>
         <div class="timer_location">
-            <span><a class="btn-floating btn-large waves-effect waves-light red">00:00</a></span>
+            <span><a class="btn-floating btn-large waves-effect waves-light red"><span id="timer"></span></a></span>
         </div>
 		<?php
-		{
+		}
 		?>
         <!--End of timer-->
 
@@ -333,7 +333,33 @@ for($i=$j;$i<=$j;$i++)
                     <div class="input-field col m10 s10 white-text">
                         <p><?php echo $row['question'];?></p>
                     </div>
-                <?php
+					
+				<?php
+				//Getting No of Answers
+				$comma = substr_count($row['answer'], ',');
+				if($row['option1']!='' && $row['option2']!='' && $comma==0)
+				{
+				?>
+				    <div class="col s1 m1"></div>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test1" value="<?php echo $row['option1'];?>" />
+					<label for="test1" class="white-text"><?php echo $row['option1'];?></label>
+				</p>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test2" value="<?php echo $row['option2'];?>" />
+					<label for="test2" class="white-text"><?php echo $row['option2'];?></label>
+				</p>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test3" value="<?php echo $row['option3'];?>" />
+					<label for="test3" class="white-text"><?php echo $row['option3'];?></label>
+				</p>
+				<p>
+					<input class="with-gap" name="group1" type="radio" id="test4" value="<?php echo $row['option4'];?>" />
+					<label for="test4" class="white-text"><?php echo $row['option4'];?></label>
+				</p>
+				<?php
+				}
+                else
 				if($row['option1']!='' && $row['option2']!='')
 				{
 				?>
@@ -500,7 +526,7 @@ else
 
 </html>
 <?php
-}
+	}
 else
 	echo "<script>alert('Quiz Not Active Now!');window.location='index.php';</script>";
 ?>
