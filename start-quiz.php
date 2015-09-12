@@ -3,6 +3,8 @@ include 'config.php';
 session_start();
 if(empty($_SESSION['name']))
 	echo "<script>alert('Please Login To Participate.');window.location.href='index.php';</script>"; //Login to Participate
+else
+{
 $qname = $_GET['Name'];
 $quizname=$qname.'_score';
 $_SESSION['qname']=$qname;
@@ -27,11 +29,13 @@ $time3=explode(':', $res['end_time']);
 
 $a = 0; //To Check if all Start and End date parameters Match
 $b = 0; //To Check if all Start and End date parameters Match
+$c = 0; //To Check if all Start and End date parameters Match
 
 //----------------------------------Quiz Start and End time Session Variable of Particular user!------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------------------------------------------------------------//
 $_SESSION['quiz_start_time']= $date2[0].":".$date2[1].":".$date2[2]." ".$time2[0].":".$time2[1].":".$time2[2];
+
 if(isset($res['quiz_time']))
 {	
 	$quiztime = explode(':',$res['quiz_time']);
@@ -121,7 +125,7 @@ else
 	if($date1[0]>$date2[0])
 		$a+=0;
 else	
-	if($date1[0]=$date2[0])
+	if($date1[0]==$date2[0])
 	{
 		if($date1[1]<$date2[1])
 			{
@@ -129,7 +133,7 @@ else
 				$a+=1;
 			}
 		else
-			if($date1[1]=$date2[1])
+			if($date1[1]==$date2[1])
 			{
 				if($date1[2]<$date2[2])
 					{
@@ -137,33 +141,33 @@ else
 						$a+=1;
 					}
 				else
-					if($date1[2]===$date2[2])
+					if($date1[2]==$date2[2])
 						$a+=1;
 			}
 	}
 //---------------------------------------------Comparing Current date and End date--------------------------------------------------------------------//
 if($date2[0]<$date3[0])
 {
-	$b+=1;
+	$c+=1;
 	$a+=1;
 }
 else
  	if($date2[0]>$date3[0])
 		$a+=0;
 else
-	if($date2[0]=$date3[0])
+	if($date2[0]==$date3[0])
 	{
 		if($date2[1]<$date3[1])
 			{
-				$b+=1;
+				$c+=1;
 				$a+=1;
 			}
 		else
-			if($date2[1]=$date3[1])
+			if($date2[1]==$date3[1])
 			{
 				if($date2[2]<$date3[2])
 				{
-					$b+=1;
+					$c+=1;
 					$a+=1;
 				}
 				else
@@ -171,9 +175,8 @@ else
 						$a+=1;
 			}
 	}
-
 //---------------------------------------------Comparing Current time and Start time------------------------------------------------------------------//
-if($b==0)
+if($b<1)
 {
 if($time1[0]<$time2[0])
 	$a+=1;
@@ -181,40 +184,46 @@ else
 	if($time1[0]>$time2[0])
 		$a+=0;
 else
-	if($time1[0]=$time2[0])
+	if($time1[0]==$time2[0])
 	{
 		if($time1[1]<$time2[1])
 			$a+=1;
 		else
-			if($time1[1]=$time2[1])
+			if($time1[1]==$time2[1])
 			{
 				if($time1[2]<=$time2[2])
 					$a+=1;
 			}
 	}
-
+}
+else
+	$a+=1;
 //---------------------------------------------Comparing Current time and End time--------------------------------------------------------------------//
+if($c<1)
+{
 if($time2[0]<$time3[0])
 	$a+=1;
 else 
 	if($time2[0]>$time3[0])
 		$a+=0;
 else
-	if($time2[0]=$time3[0])
+	if($time2[0]==$time3[0])
 	{
 		if($time2[1]<$time3[1])
 			$a+=1;
 		else
-			if($time2[1]=$time3[1])
+			if($time2[1]==$time3[1])
 			{
 				if($time2[2]<=$time3[2])
 					$a+=1;
 			}
 	}
-//----------------------------------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------------------------------//
-//----------------------------------------------------------------------------------------------------------------------------------------------------//
 }
+else
+	$a+=1;
+//----------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------//
+//----------------------------------------------------------------------------------------------------------------------------------------------------//
 if($a>=4 || $b==2)
 {
 	$result = mysql_query("SELECT * FROM $quizname WHERE email='$email'"); //check if corresponding user had already attempted the quiz
@@ -529,4 +538,5 @@ else
 	}
 else
 	echo "<script>alert('Quiz Not Active Now!');window.location='index.php';</script>";
+}
 ?>

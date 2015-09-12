@@ -115,6 +115,24 @@ $result = $display;
 	</div>
 </form>
 <br>
+<form class="col s12" method="POST" action="modifyQuestion.php">
+	<div class="row">
+		<button class="btn waves-effect waves-light" type="submit" name="action">Change Q.No.
+			<i class="mdi-content-send right"></i>
+		</button>
+		<br>
+        <div class="input-field col s1">
+          <input id="q_name" type="text" class="validate" name="qno_old">
+          <label>Old Q.No.</label>
+        </div>
+        <div class="input-field col s1">
+          <input id="q_name" type="text" class="validate" name="qno_new">
+          <label>New Q.No.</label>
+        </div>
+	</div>
+	<div class="row">
+</form>
+<br>
 <form method="POST" action="remove.php" style="display:inline;">
 	<div class="row">
 		<button class="btn waves-effect waves-light" type="submit" name="action">Remove
@@ -131,10 +149,10 @@ $result = $display;
 
 <!--Upload The Quiz-->
 <marquee>Dear <?php echo $onamed.', '.$qnamed;?> is uploaded to Database make required changes and then drop a mail to Event Head to make it live!</marquee>
-  <div class="row"><a href="index.php">
-	<button class="btn waves-effect waves-light" type="submit" name="action">No Changes, UPLOAD
+  <div class="row"><form action="index.php">
+	<button class="btn waves-effect waves-light" type="submit">No Changes, UPLOAD
     <i class="mdi-content-send right"></i>
-	</button></a>
+	</button></form>
   </div>
   
 <!--Begin Footer-->
