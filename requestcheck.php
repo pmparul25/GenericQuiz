@@ -13,9 +13,8 @@ if($_POST['group1']=='1')
 	$st=$_POST['start_time'];
 	$ed=$_POST['end_date'];
 	$et=$_POST['end_time'];
-	$qt=$_POST['quiz_time'];
-	$ent = mysql_query("INSERT into quizzes (quiz_name,o_name,start_date,start_time,end_date,end_time,quiz_time) values ('$qn','$on','$sd','$st','$ed','$et','$qt')") or die("Sorry, Technical Failure");
-	$entry = mysql_query("CREATE TABLE ".$qn."_score (email varchar(40) Primary Key,name varchar(20), score varchar(5),status varchar(10))") or die("Could not create table");
+	$ent = mysql_query("INSERT into quizzes (quiz_name,o_name,start_date,start_time,end_date,end_time) values ('$qn','$on','$sd','$st','$ed','$et')") or die("Sorry, Technical Failure");
+	$entry = mysql_query("CREATE TABLE ".$qn."_score (email varchar(40) Primary Key,name varchar(20), score varchar(5),time varchar(30))") or die("Could not create table");
 	if($ent && $entry)
 	{	
 		echo "<script>alert('Quiz Uploaded.');</script>";
